@@ -1,0 +1,189 @@
+/* Color */
+:root{
+    --green:#0cd758;
+    --darkgreen:#13505c;
+    --gray:#e0e5eb;
+    --grey:#b3d1ce;
+    --brown:#b3d1ce;
+    --black:#414649;
+}
+
+@font-face {
+    font-family: 'kurato';
+    src: url(/fonts/KURATO.ttf);
+}
+
+@font-face {
+    font-family: 'Abela Sweety';
+    src: url(/fonts/Abela\ Sweety.ttf);
+}
+
+@font-face {
+    font-family: 'Brushings';
+    src: url(/fonts/Brushings.ttf);
+}
+
+@font-face {
+    font-family: 'Sprinkle Darling';
+    src: url(/fonts/Sprinkle\ Darling.otf);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Abela Sweety','sans-serif';
+}
+body{
+    overflow-x: hidden;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style-type: none;
+}
+
+
+/* Navbar */
+.navbar{
+    width: 100vw;
+    /* background-color: red; */
+    height: 8vh;
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 99;
+    /* background-color: black;
+    opacity: 0.2; */
+}
+
+.navbar .nav-link{
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar .title{
+    color: var(--green);
+    font-family: 'kurato';
+    font-size: 2.1rem;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 1px var(--darkgreen);
+}
+
+.navbar .title:hover{
+    display: block;
+    transform: translateY(-2px) scale(1.2);
+    color: var(--darkgreen);
+    transition: ease-in .3s;
+}
+
+
+.navbar .nav-link a{
+    text-align: center;
+    display: inline-block;
+    width: 4rem;
+    margin: 0 1rem;
+    color: var(--black);
+    font-family: 'Sprinkle Darling';
+    font-size: 1.2rem;
+}
+
+.navbar .nav-link a:hover{
+    transform: translateY(-2px) scale(1.2);
+    color: var(--darkgreen);
+    text-decoration: overline;
+    /* font-weight: 800; */
+    transition: ease-in .3s;
+}
+
+/* Home */
+.main .home{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--gray);
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    padding-top: 8vh;
+    color: var(--black);
+    /* overflow: hidden; */
+}
+
+.home .content{
+    margin-right: 10rem;
+    letter-spacing: 1px;
+}
+
+.content span{
+    font-family: 'Sprinkle Darling';
+    color: var(--green);
+    text-shadow: 0 1px 1px var(--darkgreen);
+}
+
+.content h2{
+    font-size: 2.2rem;
+}
+
+.home .image-content{
+    display: flex;
+    background-color: var(--darkgreen);
+    width: 30rem;
+    height: 30rem;
+    align-items: center;
+    transform: skew(-23deg);
+    border-radius: 70%;
+}
+
+.home .image-content img{
+    /* position: absolute; */
+
+    transform: skew(20deg)
+}
+
+
+/* Project */
+.project{
+    width: 100vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /* padding-top: 2rem; */
+    background-image: url(/img/bg-keyboard-1.jpg);
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: var(--gray);
+}
+
+.project .sub-title h1{
+    font-family: 'Brushings';
+    font-weight: bold;
+    text-shadow: 0 0 2px var(--black);
+    font-size: 2.8rem;
+}
+
+.project .projects{
+    width: 100%;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items:flex-end;
+}
+
+.project .projects li{
+    display: block;
+    /* height: rem; */
+    width: 15rem;
+    text-align: center;
+    /* background-color: #0cd758; */
+}
+
+.card{
+    width: 10rem;
+    /* background-color: red; */
+}

@@ -10,22 +10,22 @@
 
 @font-face {
     font-family: 'kurato';
-    src: url(/fonts/KURATO.ttf);
+    src: url(../fonts/KURATO.ttf);
 }
 
 @font-face {
     font-family: 'Abela Sweety';
-    src: url(/fonts/Abela\ Sweety.ttf);
+    src: url(../fonts/Abela\ Sweety.ttf);
 }
 
 @font-face {
     font-family: 'Brushings';
-    src: url(/fonts/Brushings.ttf);
+    src: url(../fonts/Brushings.ttf);
 }
 
 @font-face {
     font-family: 'Sprinkle Darling';
-    src: url(/fonts/Sprinkle\ Darling.otf);
+    src: url(../fonts/Sprinkle\ Darling.otf);
 }
 
 *{
@@ -57,12 +57,9 @@ li{
     z-index: 99;
     /* background-color: black;
     opacity: 0.2; */
+    animation: naik 2s linear;
 }
 
-.navbar .nav-link{
-    display: flex;
-    flex-direction: row;
-}
 
 .navbar .title{
     color: var(--green);
@@ -79,7 +76,15 @@ li{
     transition: ease-in .3s;
 }
 
+.navbar .nav-link{
+    display: flex;
+    flex-direction: row;
+}
 
+.navbar .nav-link li{
+    display: table-cell;
+    position: relative;
+}
 .navbar .nav-link a{
     text-align: center;
     display: inline-block;
@@ -90,19 +95,36 @@ li{
     font-size: 1.2rem;
 }
 
+
 .navbar .nav-link a:hover{
     transform: translateY(-2px) scale(1.2);
     color: var(--darkgreen);
-    text-decoration: overline;
+    /* text-decoration: overline; */
     /* font-weight: 800; */
     transition: ease-in .3s;
+}
+
+.navbar .nav-link li a:hover::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0.1rem;
+    left: 0;
+    background-color: var(--green);
+    /* z-index: 99; */
+    animation: card 0.5s ease;
 }
 
 /* Home */
 .main .home{
     width: 100vw;
-    height: 100vh;
-    background-color: var(--gray);
+    min-height: 100vh;
+    /* background-color: var(--gray); */
+    background-image: url('../img/bg-home2.jpg');
+    /* background-attachment: fixed; */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     justify-content:space-evenly;
     align-items: center;
@@ -133,18 +155,20 @@ li{
     height: 30rem;
     align-items: center;
     transform: skew(-23deg);
+    justify-content: center;
     border-radius: 70%;
 }
 
-.home .image-content img{
+.home .image-content .foto{
     /* position: absolute; */
-
-    transform: skew(20deg)
+    filter: drop-shadow(2px 3px 2px var(--darkgreen));
+    transform: skew(20deg);
+    animation: animasi 2s ease-in;
 }
 
 
 /* Project */
-.project{
+.skill{
     width: 100vw;
     height: 60vh;
     display: flex;
@@ -152,38 +176,201 @@ li{
     justify-content: space-around;
     align-items: center;
     /* padding-top: 2rem; */
-    background-image: url(/img/bg-keyboard-1.jpg);
+    background-image: url(../img/bg-keyboard-1.jpg);
     background-position: top;
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     color: var(--gray);
 }
 
-.project .sub-title h1{
+.skill .sub-title h1{
     font-family: 'Brushings';
     font-weight: bold;
-    text-shadow: 0 0 2px var(--black);
-    font-size: 2.8rem;
+    color: var(--darkgreen);
+    text-shadow: 0 0 2px var(--grey);
+    font-size: 2.5rem;
 }
 
-.project .projects{
+.skill .skills{
     width: 100%;
     margin-bottom: 2rem;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items:flex-end;
+    flex-wrap: wrap;
 }
 
-.project .projects li{
-    display: block;
+.skill .skills li{
+    /* display: block; */
     /* height: rem; */
-    width: 15rem;
+    width: 12rem;
     text-align: center;
     /* background-color: #0cd758; */
+}
+
+
+.skills a{
+    display: inline-block;
+    width: 100%;
+    /* background-color: red2 */
 }
 
 .card{
     width: 10rem;
     /* background-color: red; */
+    opacity: 1;
+}
+
+.card img{
+    width: 12rem;
+}
+
+
+/* About */
+.about{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    justify-content: right;
+    background-color: #0e0e0e;
+    /* overflow: hidden; */
+    color: var(--gray);
+}
+
+.about .sub-title{
+    padding-top: 1.5rem;
+    font-family: 'Brushings';
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    text-shadow: 0 2px 4px var(--darkgreen);
+}
+
+.about .content-about{
+    display: flex;
+    margin-top: 2rem;
+    flex-direction: row;
+    justify-content: space-around;
+    height: inherit;
+    padding: 0 8rem;
+    height: 90%;
+    /* background-color: red; */
+}
+
+.about .content-about img{
+    filter: drop-shadow(2px 3px 2px var(--darkgreen));
+    margin-left: 3rem;
+}
+
+.about .content-about .about-me{
+    display: flex;
+    justify-content: center;
+    align-items:baseline;
+    flex-direction: column;
+    width: 65%;
+}
+
+.about .content-about .about-me h2{
+    margin: 2rem 1rem;
+}
+
+@keyframes animasi {
+    0%{
+        transform: skew(0deg);
+        opacity: 0;
+        /* width: 0; */
+    }
+    50%{
+        transform: skew(30deg);
+        opacity: 1;
+        /* width: 100%;  */
+    }
+    100%{
+        transform: skew(20deg);
+
+    }
+}
+
+@keyframes naik {
+    0%{
+        margin-top: 100vh;
+    }
+    50%{
+        margin-top:100vh;
+    }
+    100%{
+        margin-top: 0vh;
+    }
+}
+
+@keyframes card {
+    0%{
+        opacity: 0;
+        transform: scale(0);
+    }
+    50%{
+        opacity: 0.5;
+        transform: scale(1.2);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Laptop */
+@media (max-width:1366px) {
+    
+    .home{
+        padding: 0 5rem;
+        padding-top: 0rem;
+        max-height: 100vh;
+    }
+    
+    .home .image-content .foto{
+        max-width: 35rem;
+        max-height: 80vh;
+    }
+}
+
+/* Tablet */
+@media (max-width:768px){
+    html{
+        font-size: 85.5%;
+    }
+    .main .home{
+        flex-direction: column;
+        min-height:100vh;
+    }
+    .main .home{
+        padding-top: 0rem;
+    }
+    
+    .home .image-content .foto{
+        max-width: 20rem;
+        max-height: 60vh;
+    }
+    
+}
+
+/* Mobile */
+@media (max-width:550px) {
+    html{
+        font-size: 70%;
+    }
+    .navbar {
+        flex-direction: column;
+    }
+    .navbar .title{
+        display: none;
+    }
+    .home .content{
+        margin-left: 8rem;
+        width: 80vw;
+    }
+
 }

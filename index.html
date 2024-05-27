@@ -33,7 +33,8 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
-      .link:hover {
+      .link:hover,
+      #about h2 {
         background: linear-gradient(to bottom left, #049aee, #34ec97);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -63,6 +64,17 @@
         .hide {
           display: none;
         }
+        .foto {
+          width: max-content;
+        }
+      }
+      @media (max-width: 768px) {
+        .poto {
+          width: 100%;
+        }
+        .text-end {
+          text-align: center;
+        }
       }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -71,10 +83,10 @@
   </head>
   <body>
     <section class="w-screen mx-auto px-4">
-      <nav class="flex flex-wrap p-6 justify-evenly">
+      <nav class="flex flex-wrap p-6 justify-between md:pl-8 w-full">
         <div class="flex flex-shrink mr-0 md:mr-6">
           <a
-            href="#"
+            href="/"
             class="nav-judul text-md md:text-2xl mr-0 md:mr-2 font-bold"
             >Bambang Satmoto</a
           >
@@ -105,7 +117,7 @@
         <div
           class="hide navigasi w-full block flex-grow lg:flex lg:items-center lg:w-auto text-center md:text-start"
         >
-          <div class="text-md md:text-lg lg:flex-grow">
+          <div class="text-md md:text-lg lg:flex-grow text-end">
             <a
               href="#about"
               id="btn-about"
@@ -124,44 +136,50 @@
               class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 link text-lg mr-4"
               >Recent Work</a
             >
-            <a
-              href="#contact"
-              id="btn-contact"
-              class="block mt-4 lg:inline-block lg:mt-0 text-gray-600 link text-lg mr-4"
-              >Contact Me</a
-            >
           </div>
         </div>
       </nav>
     </section>
-    <section class="w-screen mx-auto py-4 bg-gradient" id="about">
-      <div class="px-16 py-8 text-center text-white">
-        <h1 class="w-full text-4xl font-extralight judul">About me</h1>
-        <div class="mb-4">
-          <div
-            class="bg-gradient-2 w-3/6 lg:w-1/4 opacity-75 rounded h-1 mx-auto"
-          ></div>
-        </div>
-        <h2 class="text-3xl font-bold mb-1 intro">Hi, I'm Bambang Satmoto</h2>
-        <h2 class="text-3xl font-bold mb-2 intro">Nice to meet you !</h2>
-        <h2 class="text-lg mb-2 intro">
-          I'm a beginner web developer, this is my short portfolio
-        </h2>
-        <div class="w-full intro">
-          <div class="px-4 py-4">
-            <img
-              src="/images/saya-min.jpg"
-              alt="foto saya"
-              class="shadow-lg rounded-full max-w-full mx-auto text-center w-40"
-            />
+    <section class="w-screen mx-auto py-4 px-auto" id="about">
+      <div
+        class="px-16 py-8 text-center flex flex-wrap-reverse intro justify-between w-screen"
+      >
+        <div class="div py-2 px-4 w-2/3">
+          <h1 class="w-full text-3xl font-extralight judul text-gray-700">
+            Hi, I'm Bambang Satmoto
+          </h1>
+          <div class="mb-4">
+            <div
+              class="bg-gradient-2 w-3/6 lg:w-1/2 opacity-75 rounded h-1 mx-auto mt-2"
+            ></div>
           </div>
+          <h2 class="text-3xl font-bold mb-1 intro"></h2>
+          <h2 class="text-3xl font-bold mb-2 intro">
+            I'm a beginner web developer,
+          </h2>
+          <h2 class="text-xl intro">welcome to my short portfolio</h2>
+          <div class="px-2 py-4 text-center">
+            <a
+              class="bg-gradient tombol text-gray-700 font-bold px-4 py-2 shadow-md rounded-tr-lg rounded-bl-lg"
+              href="https://wa.me/6285882759455?text=Hello,%20I'm%20interested%20in%20your%20profile"
+            >
+              Let's Talk
+            </a>
+          </div>
+        </div>
+        <div class="px-5 w-3/6 poto">
+          <img
+            src="/images/Saya1.jpg"
+            alt="foto saya"
+            class="rounded-full foto mx-auto text-center w-3/6"
+          />
         </div>
       </div>
       <div
-        class="grid grid-cols-1 md:grid-cols-3 bg-white py-4 px-4 md:py-8 md:px-8 m-16 rounded-lg"
+        class="grid grid-cols-1 md:grid-cols-3 py-4 px-4 md:py-8 md:px-8 bg-gradient"
       >
         <div
-          class="max-w-sm shadow-lg px-4 py-4 bg-white m-3 text-center portfolio"
+          class="max-w-sm shadow-lg px-4 py-4 bg-white m-3 text-center portfolio rounded-lg"
         >
           <img src="/images/icon/laptop.png" alt="" class="w-20 mx-auto" />
           <div class="p-4 text-center">
@@ -173,16 +191,9 @@
             <p class="text-gray-600 text-base mb-2">Java</p>
             <hr class="text-gray-600 mb-2" />
           </div>
-          <div class="px-2 py-4">
-            <button
-              class="tombol bg-teal-500 font-bold px-4 py-2 shadow-md rounded-tl-lg rounded-br-lg text-white hover:text-gray-600"
-            >
-              View More
-            </button>
-          </div>
         </div>
         <div
-          class="max-w-sm shadow-lg px-4 py-4 bg-white m-3 text-center portfolio"
+          class="max-w-sm shadow-lg px-4 py-4 bg-white m-3 text-center portfolio rounded-lg"
         >
           <img src="/images/icon/computer.png" alt="" class="w-20 mx-auto" />
           <div class="p-4 text-center">
@@ -194,16 +205,9 @@
             <p class="text-gray-600 text-base mb-2">Design</p>
             <hr class="text-gray-600 mb-2" />
           </div>
-          <div class="px-2 py-4">
-            <button
-              class="tombol bg-blue-500 font-bold px-4 py-2 shadow-md rounded-tl-lg rounded-br-lg text-white hover:text-gray-600"
-            >
-              View More
-            </button>
-          </div>
         </div>
         <div
-          class="max-w-sm shadow-lg px-4 py-4 bg-white m-3 text-center portfolio"
+          class="max-w-sm shadow-lg px-4 py-4 bg-white m-3 text-center portfolio rounded-lg"
         >
           <img src="/images/icon/database.png" alt="" class="w-20 mx-auto" />
           <div class="p-4 text-center">
@@ -214,13 +218,6 @@
             <hr class="text-gray-600 mb-2" />
             <p class="text-gray-600 text-base mb-2">PostgreSQL</p>
             <hr class="text-gray-600 mb-2" />
-          </div>
-          <div class="px-2 py-4">
-            <button
-              class="tombol bg-teal-500 font-bold px-4 py-2 shadow-md rounded-tl-lg rounded-br-lg text-white hover:text-gray-600"
-            >
-              View More
-            </button>
           </div>
         </div>
       </div>
@@ -256,14 +253,14 @@
                 </li>
                 <li class="grid grid-cols-2 py-2 list-skill">
                   <p class="text-lg text-gray-600">TailwindCSS</p>
-                  <div class="gradient-skill w-3/6"></div>
-                </li>
-                <li class="grid grid-cols-2 py-2 list-skill">
-                  <p class="text-lg text-gray-600">ReactJS</p>
-                  <div class="gradient-skill w-4/6"></div>
+                  <div class="gradient-skill w-1/6"></div>
                 </li>
                 <li class="grid grid-cols-2 py-2 list-skill">
                   <p class="text-lg text-gray-600">Laravel</p>
+                  <div class="gradient-skill w-3/6"></div>
+                </li>
+                <li class="grid grid-cols-2 py-2 list-skill">
+                  <p class="text-lg text-gray-600">Codeigniter</p>
                   <div class="gradient-skill w-1/6"></div>
                 </li>
               </ul>
@@ -289,6 +286,22 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 m-8">
         <div class="bg-white px-4 py-4 m-2 shadow-lg rounded recent">
           <img
+            src="/images/My Works/Naninu.png"
+            alt=""
+            class="w-full rounded-lg h-1/3"
+          />
+          <div class="px-2 py-2 text-center">
+            <p class="font-bold text-xl mb-2 text-gray-700">
+              Sistem Pemesanan Mobil pada NaNiNuRent Car
+            </p>
+            <p class="text-gray-700 text-base">
+              This website makes it easy for customers to order a car that they
+              want to rent at Naninu Rent Car.
+            </p>
+          </div>
+        </div>
+        <div class="bg-white px-4 py-4 m-2 shadow-lg rounded recent">
+          <img
             src="/images/My Works/Home Tiket.PNG"
             alt=""
             class="w-full rounded-lg h-1/3"
@@ -307,15 +320,6 @@
               >
             </p>
           </div>
-          <div class="px-2 py-4 text-center">
-            <a href="https://github.com/bmbang48/Tugas-Digitalent">
-              <button
-                class="bg-teal-500 tombol text-gray-700 font-bold px-4 py-2 shadow-md rounded-tr-lg rounded-bl-lg"
-              >
-                Details
-              </button>
-            </a>
-          </div>
         </div>
         <div class="bg-white px-4 py-4 m-2 shadow-lg rounded recent">
           <img
@@ -332,42 +336,6 @@
               result of final project research conducted to Get a bachelor's
               degree
             </p>
-          </div>
-          <div class="px-2 py-4 text-center">
-            <button
-              class="bg-teal-500 tombol text-gray-700 font-bold px-4 py-2 shadow-md rounded-tr-lg rounded-bl-lg"
-            >
-              Details
-            </button>
-          </div>
-        </div>
-        <div class="bg-white px-4 py-4 m-2 shadow-lg rounded recent">
-          <img
-            src="/images/My Works/TvMazzeh.png"
-            alt=""
-            class="w-full rounded-lg h-1/3"
-          />
-          <div class="px-2 py-2 text-center">
-            <p class="font-bold text-xl mb-2 text-gray-700">
-              Tv Show - Clone TV Maze
-            </p>
-            <p class="text-gray-700 text-base">
-              This website is a cloning of
-              <a href="https://www.tvmaze.com/" class="link text-teal-500"
-                >TVMaze.com</a
-              >
-              created to train to manage API data obtained by free on
-              <a href="https://www.tvmaze.com/api" class="link text-teal-500"
-                >API TVMaze</a
-              >
-            </p>
-          </div>
-          <div class="px-2 py-4 text-center">
-            <button
-              class="bg-teal-500 tombol text-gray-700 font-bold px-4 py-2 shadow-md rounded-tr-lg rounded-bl-lg"
-            >
-              Details
-            </button>
           </div>
         </div>
         <div class="bg-white px-4 py-4 m-2 shadow-lg rounded recent">
@@ -386,87 +354,7 @@
               activities on a hydroponic babeh farm
             </p>
           </div>
-          <div class="px-2 py-4 text-center">
-            <button
-              class="bg-teal-500 tombol text-gray-700 font-bold px-4 py-2 shadow-md rounded-tr-lg rounded-bl-lg"
-            >
-              Details
-            </button>
-          </div>
         </div>
-      </div>
-    </section>
-    <section class="w-screen mx-auto py-4 bg-gradient-2" id="contact">
-      <h1
-        class="w-full my-2 text-4xl font-extralight text-center text-white judul"
-      >
-        Contact Me
-      </h1>
-      <div class="mb-4">
-        <div
-          class="h-1 mx-auto bg-gradient w-3/6 lg:w-1/4 opacity-75 my-0 py-0 rounded"
-        ></div>
-      </div>
-      <div
-        class="container p-4 mb-6 w-full lg:w-1/2 shadow-lg rounded-lg bg-gray-200 mx-auto"
-      >
-        <form action="" id="form" class="p-5 lg:p-10 text-center">
-          <h4 class="text-2xl font-semibold contact">Want to contact me ?</h4>
-          <p class="mt-1 mb-4 text-gray-600 contact">
-            Please send your message
-          </p>
-          <div class="w-full mb-4 mt-8 contact">
-            <label
-              for="name"
-              class="uppercase text-gray-600 text-xs font-semibold"
-              >Name</label
-            >
-            <input
-              type="text"
-              name="name"
-              id="name"
-              class="mt-2 px-3 py-3 placeholder-gray-400 text-gray-600 bg-white rounded text-sm shadow w-full"
-              placeholder="Insert your fullname"
-            />
-          </div>
-          <div class="w-full mb-4 mt-8 contact">
-            <label
-              for="subject"
-              class="uppercase text-gray-600 text-xs font-semibold"
-              >subject</label
-            >
-            <input
-              type="text"
-              name="subject"
-              id="subject"
-              class="mt-2 px-3 py-3 placeholder-gray-400 text-gray-600 bg-white rounded text-sm shadow w-full"
-              placeholder="Insert your interests"
-            />
-          </div>
-          <div class="w-full mb-4 mt-8 contact">
-            <label
-              for="message"
-              class="uppercase text-gray-600 text-xs font-semibold"
-              >Message</label
-            >
-            <textarea
-              type="text"
-              name="message"
-              id="message"
-              rows="4"
-              cols="80"
-              class="mt-2 px-3 py-3 placeholder-gray-400 text-gray-600 bg-white rounded text-sm shadow w-full"
-              placeholder="Insert your message"
-            ></textarea>
-          </div>
-          <div class="mt-6 contact">
-            <a
-              class="tombol bg-teal-500 text-white text-sm font-bold uppercase px-6 py-3 rounded shadow send cursor-pointer"
-            >
-              Send Message
-            </a>
-          </div>
-        </form>
       </div>
     </section>
     <section class="w-screen mx-auto py-4 mt-4 bg-white">
